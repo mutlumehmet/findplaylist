@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grid, Row, Col } from "react-flexbox-grid";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <Grid>
+        <Row>
+          <Col className={styles.app} xl={3}>
+            Find Playlist
+          </Col>
+          <Col xl={3}>Find Playlist</Col>
+          <Col xl={3}>Find Playlist</Col>
+          <Col xl={3}>Find Playlist</Col>
+        </Row>
+      </Grid>
     </div>
   );
 }
