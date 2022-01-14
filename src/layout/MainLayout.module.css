@@ -1,0 +1,14 @@
+.main {
+  font-family: 'Space Grotesk', sans-serif;
+  width: 960px;
+  display:flex;
+  flex-direction: column;
+  margin:0 auto;
+}
+
+@media only screen and (max-width: 991px) { 
+  .main {
+    width: auto;
+    margin:0 16px;
+  }
+}

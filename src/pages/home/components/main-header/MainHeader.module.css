@@ -1,0 +1,33 @@
+.header {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 82px;
+  letter-spacing: -3px;
+  color: #07ca55;
+  margin-top: 70px;
+}
+
+.subheader {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 31px;
+  margin: 10px 0px;
+  letter-spacing: -1px;
+}
+
+@media only screen and (max-width: 991px) {
+  .header {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 82px;
+    letter-spacing: -1px;
+    margin-top: 40px;
+  }
+
+  .subheader {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 16px 0px 24px 0px;
+  }
+}
