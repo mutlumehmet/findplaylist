@@ -75,4 +75,34 @@
    flex-direction: column;
    border: none;
   }
+
+  .searchbar-container:hover {
+    box-shadow: none;
+  }
+
+  .search-box {
+    height:70px;
+    width:auto;
+    border: 2px solid #000000;
+    margin-bottom:8px;
+
+  }
+
+  .search-button {
+    justify-content: center;
+    width:auto;
+    height: 56px;
+    float:right;
+    border: 2px solid #000000;
+  }
+
+  .search-text {
+    font-size: 16px;
+  }
+
+  .search-arrow {
+    width:24px;
+  }
+
+
 }
