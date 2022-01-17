@@ -2,25 +2,26 @@ import styles from "./SearchBar.module.css";
 import { ReactComponent as SearchArrowSVG } from "assets/search-arrow.svg";
 import { ReactComponent as SearchIconSVG } from "assets/transparent-search-icon.svg";
 
-const placeholderDesktop = `Start typing genres, artists, songs`;
-const placeholderMobile = `Start typing`;
+const placeholderText = `Start typing genres, artists, songs`;
 
 const SearchBar = () => {
   return (
     <div className={styles["searchbar-container"]}>
       <label className={styles["search-box"]}>
-        <SearchIconSVG className={styles["search-icon"]} />
+        <div>
+          <SearchIconSVG className={styles["search-icon"]} />
+        </div>
         <input
           className={styles["search-input"]}
           type="text"
           id="search"
-          placeholder="Search for repo or user"
+          placeholder={placeholderText}
           autoComplete="off"
           spellCheck="false"
         ></input>
       </label>
       <button className={styles["search-button"]}>
-        <div className={styles["search-text"]}>Search</div>
+        <div className={styles["search-button-text"]}>Search</div>
         <SearchArrowSVG className={styles["search-arrow"]} />
       </button>
     </div>

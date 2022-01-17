@@ -1,4 +1,4 @@
-import { NavBar, MainScreen, Footer } from "./";
+import { NavBar, MainScreen, FooterMain } from "./";
 import styles from "./MainLayout.module.css";
 
 const MainLayout = () => {
@@ -6,7 +6,7 @@ const MainLayout = () => {
     <div className={styles.main}>
       <NavBar />
       <MainScreen />
-      <Footer />
+      <FooterMain />
     </div>
   );
 };

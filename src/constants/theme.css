@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-family: 'Space Grotesk', sans-serif;
+  --color-green: #07CA55;
+  --color-green-hover: #00B641;
+  --color-green-active:#00A22D;
+  --color-black: #000000;
+  --color-green-visited:#6E6E6E;
+}
