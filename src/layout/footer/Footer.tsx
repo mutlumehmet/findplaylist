@@ -7,7 +7,7 @@ import {
   spotifyApiUrl,
   buyMeACoffeeUrl,
 } from "constants/urls";
-import styles from "./FooterMain.module.css";
+import styles from "./Footer.module.css";
 
 const FooterMain = () => {
   return (

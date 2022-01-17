@@ -7,8 +7,6 @@
 .main {
   font-family: var(--font-family);
   width: 960px;
-  display:flex;
-  flex-direction: column;
   margin:0 auto;
 }
 

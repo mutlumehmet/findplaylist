@@ -1,12 +1,13 @@
-import { NavBar, MainScreen, FooterMain } from "./";
+import { NavBar, Footer } from "./";
+import { Pages } from "pages";
 import styles from "./MainLayout.module.css";
 
 const MainLayout = () => {
   return (
     <div className={styles.main}>
       <NavBar />
-      <MainScreen />
-      <FooterMain />
+      <Pages />
+      <Footer />
     </div>
   );
 };
