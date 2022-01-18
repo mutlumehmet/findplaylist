@@ -7,6 +7,7 @@
 
 .searchbar-container:hover {
   box-shadow: 0 0 0 2px #000000;
+  transition: 0.5s;
 }
 
 .searchbar-container:focus-within .search-icon {
@@ -46,7 +47,7 @@
 .search-button {
   display:flex;
   align-content: center;
-  width:217px;
+  width:218px;
   height: 102px;
   display:flex;
   justify-content: start;
@@ -59,13 +60,22 @@
   cursor: pointer;
 }
 
-.search-button:hover {
+/* .search-button:hover {
   background-color: var(--color-green-hover);
+} */
+
+.search-button:hover .search-arrow {
+  fill:white;
+  transition:0.5s;
 }
 
-.search-button:active {
-  background-color: var(--color-green-active);
+.search-button:focus .search-arrow {
+  fill:white;
 }
+
+/* .search-button:active {
+  background-color: var(--color-green-active);
+} */
 
 .search-button-text {
   margin-left: 23.5px;
@@ -74,6 +84,7 @@
 
 .search-arrow {
   margin-left:10px;
+  fill:black;
 }
 
 @media only screen and (max-width:991px) {

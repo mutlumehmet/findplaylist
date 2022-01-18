@@ -6,7 +6,7 @@ const placeholderText = `Start typing genres, artists, songs`;
 
 const SearchBar = () => {
   return (
-    <div className={styles["searchbar-container"]}>
+    <form className={styles["searchbar-container"]}>
       <label className={styles["search-box"]}>
         <div>
           <SearchIconSVG className={styles["search-icon"]} />
@@ -20,11 +20,14 @@ const SearchBar = () => {
           spellCheck="false"
         ></input>
       </label>
-      <button className={styles["search-button"]}>
+      <button
+        type="submit"
+        className={`${styles["search-button"]} hvrc-sweep-to-right hvr-icon-wobble-horizontal`}
+      >
         <div className={styles["search-button-text"]}>Search</div>
-        <SearchArrowSVG className={styles["search-arrow"]} />
+        <SearchArrowSVG className={`${styles["search-arrow"]} hvr-icon`} />
       </button>
-    </div>
+    </form>
   );
 };
 
