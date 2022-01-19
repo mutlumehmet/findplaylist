@@ -1,5 +1,5 @@
-@import "./assets/css/custom-theme.css";
-@import "./assets/css/hover-min.css";
+@import "./styles/custom-theme.css";
+@import "./styles/hover-min.css";
 
 body {
   margin: 0;
