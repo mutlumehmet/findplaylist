@@ -1,15 +1,16 @@
 import { ReactComponent as CoffeeSVG } from "assets/coffee.svg";
-import {
-  githubLink,
-  discordLink,
-  serkanPersonalLink,
-  mehmetPersonalLink,
-  spotifyApiUrl,
-  buyMeACoffeeUrl,
-} from "constants/urls";
+import URL_DATA from "constants/urls-and-data";
 import styles from "./Footer.module.css";
 
 const FooterMain = () => {
+  const {
+    githubLink,
+    discordLink,
+    serkanPersonalLink,
+    mehmetPersonalLink,
+    spotifyApiUrl,
+    buyMeACoffeeUrl,
+  } = URL_DATA;
   return (
     <div className={styles.footer}>
       <a href={buyMeACoffeeUrl} className={styles["cta-coffee"]}>

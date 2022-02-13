@@ -1,17 +1,31 @@
+import { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { ReactComponent as SearchArrowSVG } from "assets/search-arrow.svg";
 import { ReactComponent as SearchIconSVG } from "assets/transparent-search-icon.svg";
 
 const placeholderText = `Start typing genres, artists, songs`;
 
-const SearchBar = () => {
+const SearchBar = (props: any) => {
+  const [input, setInput] = useState<string>();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+    console.log(e.target.value);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    props.handleSearchQuery(input);
+  };
+
   return (
-    <form className={styles["searchbar-container"]}>
+    <form onSubmit={handleSubmit} className={styles["searchbar-container"]}>
       <label className={styles["search-box"]}>
         <div>
           <SearchIconSVG className={styles["search-icon"]} />
         </div>
         <input
+          onChange={handleChange}
           className={styles["search-input"]}
           type="text"
           id="search"
