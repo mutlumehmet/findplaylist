@@ -10,17 +10,12 @@ const Home = () => {
   const [playlists, setPlaylists] = useState<Object>({});
   const [isLoading, setIsloading] = useState<Boolean>(false);
   const [searchQuery, setSearchQuery] = useState<String>();
-  const {
-    tokenURL,
-    clientID,
-    clientSecret,
-    playlistSearchUrl: { baseUrl, type, offset, limit },
-  } = URL_DATA;
+  const { tokenURL, clientID, clientSecret } = URL_DATA;
 
   const handleSearch = async (input: string) => {
     setIsloading(true);
     setSearchQuery(input);
-    console.log("clicked" + input);
+    console.log(input);
 
     try {
       const tokenResponse = await axios(tokenURL, {
@@ -41,7 +36,7 @@ const Home = () => {
 
     try {
       const playlistResponse = await axios(
-        `https://api.spotify.com/v1/search?q=${searchQuery}&type=playlist&limit=50&offset=40`,
+        `https://api.spotify.com/v1/search?q=${searchQuery}&type=playlist&limit=50&offset=0`,
         {
           method: "GET",
           headers: {
@@ -51,7 +46,6 @@ const Home = () => {
           },
         }
       );
-      console.log(playlistResponse.data.playlists.items);
       setPlaylists(playlistResponse.data.playlists.items);
     } catch (err: any) {
       console.log(err.message || `token error`);
@@ -59,6 +53,7 @@ const Home = () => {
 
     setIsloading(false);
   };
+  console.log(playlists);
 
   return (
     <div>
