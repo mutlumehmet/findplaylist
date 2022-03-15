@@ -6,14 +6,13 @@ import { ReactComponent as SearchIconSVG } from "assets/transparent-search-icon.
 const placeholderText = `Start typing genres, artists, songs`;
 
 const SearchBar = (props: any) => {
-  const [input, setInput] = useState<string>();
+  const [input, setInput] = useState<string | undefined>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
-    console.log(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     props.handleSearchQuery(input);
   };
@@ -26,6 +25,7 @@ const SearchBar = (props: any) => {
         </div>
         <input
           onChange={handleChange}
+          value={input}
           className={styles["search-input"]}
           type="text"
           id="search"

@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Buffer } from "buffer";
-import { MainHeader, SearchBar } from "pages/home/components";
+import { MainHeader, PlaylistResults, SearchBar } from "pages/home/components";
 import URL_DATA from "constants/urls-and-data";
+import { IPlaylistData } from "types/types";
 
 const Home = () => {
-  // Set up states for retrieving access token and top tracks
   const [token, setToken] = useState<string>();
-  const [playlists, setPlaylists] = useState<Object>({});
+  const [playlists, setPlaylists] = useState<IPlaylistData | undefined>();
   const [isLoading, setIsloading] = useState<Boolean>(false);
-  const [searchQuery, setSearchQuery] = useState<String>();
+  const [keyword, setKeyword] = useState<string>();
   const { tokenURL, clientID, clientSecret } = URL_DATA;
 
-  const handleSearch = async (input: string) => {
+  const getToken = async () => {
     setIsloading(true);
-    setSearchQuery(input);
-    console.log(input);
 
     try {
       const tokenResponse = await axios(tokenURL, {
@@ -34,9 +32,15 @@ const Home = () => {
       console.log(err.message || `token error`);
     }
 
+    setIsloading(false);
+  };
+
+  const getPlaylistData = async (input: string) => {
+    setIsloading(true);
+    setKeyword(input);
     try {
       const playlistResponse = await axios(
-        `https://api.spotify.com/v1/search?q=${searchQuery}&type=playlist&limit=50&offset=0`,
+        `https://api.spotify.com/v1/search?q=${input}&type=playlist&limit=50&offset=0`,
         {
           method: "GET",
           headers: {
@@ -46,19 +50,26 @@ const Home = () => {
           },
         }
       );
-      setPlaylists(playlistResponse.data.playlists.items);
+      setPlaylists(playlistResponse.data);
     } catch (err: any) {
-      console.log(err.message || `token error`);
+      console.log(err.message || `playlist error`);
     }
-
     setIsloading(false);
   };
+
+  const cbGetToken = useCallback(getToken, [clientID, clientSecret, tokenURL]);
+
+  useEffect(() => {
+    cbGetToken();
+  }, [cbGetToken]);
+
   console.log(playlists);
 
   return (
     <div>
       <MainHeader />
-      <SearchBar handleSearchQuery={handleSearch} />
+      <SearchBar handleSearchQuery={getPlaylistData} />
+      <PlaylistResults total={playlists?.playlists.total} keyword={keyword} />
     </div>
   );
 };
