@@ -35,6 +35,8 @@ const Home = () => {
     setIsloading(false);
   };
 
+  console.log(isLoading);
+
   const getPlaylistData = async (input: string) => {
     setIsloading(true);
     setKeyword(input);
