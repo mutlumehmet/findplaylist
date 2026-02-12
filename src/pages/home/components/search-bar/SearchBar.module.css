@@ -80,11 +80,12 @@
 .search-button-text {
   margin-left: 23.5px;
   font-size: 40px;
+  color: #ffffff;
 }
 
 .search-arrow {
   margin-left:10px;
-  fill:black;
+  fill: #ffffff;
 }
 
 @media only screen and (max-width:991px) {
