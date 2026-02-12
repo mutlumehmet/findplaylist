@@ -18,5 +18,5 @@ code {
 
 ::selection {
   color: white;
-  background-color: #07CA55
+  background-color: var(--color-green);
 }
