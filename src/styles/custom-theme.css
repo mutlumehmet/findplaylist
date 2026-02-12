@@ -7,4 +7,8 @@
   --color-green-active:#00A22D;
   --color-black: #000000;
   --color-green-visited:#6E6E6E;
+  /* Purple variant (base #8100D1) */
+  --color-purple: #8100D1;
+  --color-purple-hover: #6B00B2;
+  --color-purple-active: #560090;
 }

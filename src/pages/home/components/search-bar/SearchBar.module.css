@@ -53,7 +53,7 @@
   justify-content: start;
   align-items: center;
   padding:0px;
-  background-color: var(--color-green);
+  background-color: var(--color-purple);
   float:right;
   border:none;
   border-left: 2px solid #000000;
@@ -61,7 +61,7 @@
 }
 
 /* .search-button:hover {
-  background-color: var(--color-green-hover);
+  background-color: var(--color-purple-hover);
 } */
 
 .search-button:hover .search-arrow {
@@ -74,7 +74,7 @@
 }
 
 /* .search-button:active {
-  background-color: var(--color-green-active);
+  background-color: var(--color-purple-active);
 } */
 
 .search-button-text {
